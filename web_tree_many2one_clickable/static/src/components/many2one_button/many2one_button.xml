@@ -10,11 +10,12 @@
 
     <t t-inherit="web.ListRenderer.RecordRow" t-inherit-mode="extension">
         <xpath expr="//Field" position="after">
+            <!-- Add support for type 'many2one_avatar' -->
             <TreeMany2oneClickableButton
                 record="record"
                 field="record.fields[column.name]"
                 value="record.data[column.name]"
-                t-if="record.fields[column.name].type == 'many2one' and record.data[column.name] and canUseFormatter(column, record) and !props.archInfo.fieldNodes[column.name].options.no_open"
+                t-if="record.fields[column.name].type == 'many2one' or record.fields[column.name].type == 'many2one_avatar' and record.data[column.name] and canUseFormatter(column, record) and !props.archInfo.fieldNodes[column.name].options.no_open"
             />
         </xpath>
     </t>

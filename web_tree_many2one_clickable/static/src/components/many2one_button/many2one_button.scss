@@ -1,3 +1,12 @@
+// Override the default o_field_many2one_avatar styles
+// to make the arrow button align horizontal with the field and stay on the right
+td.o_list_many2one {
+    div.o_field_many2one_avatar {
+        display: inline-block !important;
+    }
+}
+
+// Keep the button visible on hover as-is for the default many2one widget
 td.o_list_many2one {
     button.web_tree_many2one_clickable {
         margin-left: 0.5em;
@@ -7,4 +16,17 @@ td.o_list_many2one {
     &:hover button.web_tree_many2one_clickable {
         visibility: visible;
     }
+}
+
+// Keep the button visible always for the many2one_avatar widget
+td.o_many2one_avatar_cell {
+    button.web_tree_many2one_clickable {
+        margin-left: 0.5em;
+        visibility: visible;
+    }
+
+    &:hover button.web_tree_many2one_clickable {
+        visibility: visible;
+    }
+
 }
